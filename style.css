@@ -1,0 +1,105 @@
+/* General Styles */
+* { box-sizing: border-box; }
+
+body { 
+    background: #fff; 
+    height: 5430px; 
+    text-align: center; 
+    margin: 0;  
+    font-family: 'StyreneA-Medium', sans-serif; 
+    font-size: 27px;
+}
+
+/* Import the font */
+@font-face {
+  font-family: 'StyreneA-Medium';
+  src: url('assets/StyreneA-Medium.woff2') format('woff2');
+}
+
+img { max-width: 100%; height: auto; }
+
+#content { position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+
+#viewport {
+    perspective: 78vh;
+    perspective-origin: 50% -65vh;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    margin-top: 50vh;
+}
+
+.frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+#caption-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: black;
+  padding: 40px;
+  text-align: left;
+}
+
+/* Logo Container */
+#logo-container {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#logo {
+    width: 450px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Message Below Logo */
+#logo-message {
+    display: none;  /* Hidden by default */
+    margin-top: 200px;
+    color: black;
+    text-align: left;  /* Left-align the text */
+}
+
+/* Blur Effect */
+.blur-effect {
+    filter: blur(30px);
+    pointer-events: none;  /* Prevent interactions while blurred */
+}
+
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+
+    body {
+      font-size: 18px; /* Smaller font size for mobile */
+      height: 4980px;
+    }
+  
+    #logo {
+      width: 50vw; /* Smaller logo size for mobile */
+    }
+  
+    #logo-container {
+      top: 20px; /* Reduced top margin for logo */
+      left: 20px;
+    }
+  
+    #caption-container {
+      padding: 20px; /* Reduced padding for caption container */
+    }
+    #viewport {
+        perspective: 87vh;
+  }  }
+  
