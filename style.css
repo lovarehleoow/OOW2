@@ -44,6 +44,8 @@ img { max-width: 100%; height: auto; }
   color: black;
   padding: 40px;
   text-align: left;
+  mix-blend-mode: difference;
+  color: white;
 }
 
 /* Logo Container */
@@ -51,33 +53,52 @@ img { max-width: 100%; height: auto; }
     position: fixed;
     top: 40px;
     left: 40px;
-    text-align: center;
+    right: 40px;
+    text-align: left;
     z-index: 1000;
+    mix-blend-mode: difference;
+    color: white;
+
 }
 
 #logo {
     width: 450px; /* Adjust size as needed */
     height: auto;
     cursor: pointer;
+    mix-blend-mode: difference;
 }
 
 #logo img {
     width: 100%;
     height: auto;
+    mix-blend-mode: difference;
+
 }
 
 /* Message Below Logo */
 #logo-message {
-    display: none;  /* Hidden by default */
-    margin-top: 200px;
-    color: black;
-    text-align: left;  /* Left-align the text */
+  display: none;
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  mix-blend-mode: difference;
+  /* Add these styles for scrollable content */
+  max-height: 660px; /* Adjust the maximum height as needed */
+  overflow-y: auto; /* Enable vertical scroll if content exceeds max-height */
 }
 
 /* Blur Effect */
 .blur-effect {
     filter: blur(30px);
     pointer-events: none;  /* Prevent interactions while blurred */
+}
+
+.hidden {
+  opacity: 0; /* Or use visibility: hidden; if you don't want the element to take up space */
+}
+
+#content, #caption-container {
+  transition: opacity 30ms ease-in-out; /* Adjust the duration (1s) and timing function as desired */
 }
 
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
@@ -94,6 +115,8 @@ img { max-width: 100%; height: auto; }
     #logo-container {
       top: 20px; /* Reduced top margin for logo */
       left: 20px;
+      right: 20px;
+      bottom: 20px;
     }
   
     #caption-container {
@@ -101,5 +124,5 @@ img { max-width: 100%; height: auto; }
     }
     #viewport {
         perspective: 87vh;
-  }  }
-  
+  } 
+}
